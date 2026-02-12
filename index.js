@@ -6,6 +6,7 @@ const saveArq = document.getElementsByClassName("arquetipo")
 const saveCheck = document.getElementsByClassName("saveCheck")
 const savedText = document.getElementsByClassName("saveText")
 
+
 const Arquetypes = ["Atleta",
     "Cético",
     "Esbelto",
@@ -66,10 +67,12 @@ function save(){
         a+= `${temp} `
     }
     loadText.value=`${a} #`  
+    localStorage['save'] = `${a} #`; // only strings
 }
 
-function load(){
-    let a = window.prompt("digite 'load' para confirmar").toLowerCase()
+async function load(skip=false){
+    
+    let a =!skip? window.prompt("digite 'load' para confirmar").toLowerCase():"load"
     if (a === "load"){
     let temp=[];
     let t="";
@@ -114,3 +117,4 @@ function load(){
 }
         
 }
+if (localStorage['save']){loadText.value=localStorage['save'];load(true)}
