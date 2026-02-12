@@ -13,7 +13,6 @@ body{
   color: black;
   border: 2px solid;
   text-align: center;
-  overflow: scroll;
 }
 
 
@@ -103,4 +102,5 @@ h2{text-decoration:underline;}
         width: 50%;
 
 }
+
 
