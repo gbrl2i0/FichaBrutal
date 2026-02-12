@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brutal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "Main">
+    <div id = "Info"><h1>INFORMAÇÕES:</h1>
+        <label for="Name">Nome:</label>
+        <input type="text" placeholder="nome" id = "Name" class="saveText"><br>
+        <label for="detalhes">Detalhes:</label>
+        <textarea name="" id="detalhes" class="saveText" placeholder="vazio"></textarea>
+        
+
+        <br><br>
+        <label for="Arquetype">Arquétipo</label>
+        <div class = "Dropdown" id = "Arquetype">
+            <button id = "ArqButton" class = "arquetipo">None</button>
+            <div class = "Content">
+                <button onclick="arquetype(0)" class = "option" id = "Atleta">Atleta</button>
+                <button onclick="arquetype(1)" class = "option" id = "Cética">Cética</button>
+                <button onclick="arquetype(2)" class = "option" id = "Esbelto">Esbelto</button>
+                <button onclick="arquetype(3)" class = "option" id = "Herói">Herói</button><br>
+                <button onclick="arquetype(4)" class = "option" id = "Nerd">Nerd</button>
+                <button onclick="arquetype(5)" class = "option" id = "Inocente">Inocente</button>
+                <button onclick="arquetype(6)" class = "option" id = "Relaxado">Relaxado</button>
+                <button onclick="arquetype(7)" class = "option" id = "Valentona">Valentona</button>
+            </div>
+        </div>
+    </div><br>
+    <div id = "Atributos"><h2>Atributos</h2>
+        <div id = "Bonus">
+            <label for="Agi">Agilidade:</label>
+            <input id = "Agi" type="checkbox" class="saveCheck Bonus">
+
+            <label for="Ast"> Astúcia:</label>
+            <input id = "Ast" type="checkbox" class="saveCheck Bonus">
+
+            <label for="For"> Força:</label>
+            <input id = "For" type="checkbox" class="saveCheck Bonus">
+
+            <label for="Car"> Carisma:</label>
+            <input id = "Car" type="checkbox" class="saveCheck Bonus"> 
+
+            <label for="Vig"> Vigor:</label>
+            <input id = "Vig" type="checkbox" class="saveCheck Bonus">
+        </div><hr>
+        <div id = Die>
+            <label for="Dice">Dados</label>
+            <input type="number" id="Dice" placeholder="6" class="saveText" value = "6" min="0">
+
+            <label for="Flee" >Fuga</label>
+            <input type="number" id="Flee" placeholder="0" class="saveText" value = "0" min="0">
+
+            <label for="Ten" >Tensão</label>
+            <input type="number" id="Ten" placeholder="0" class="saveText" value = "0" min="0">
+        </div><hr>
+        <div id = "Markers">
+            <label for="Feridas" >Feridas</label>
+            <input type="number" id="Feridas" placeholder="0" class="saveText" value = "0" min="0">
+
+            <label for="Sequela" >Sequela</label>
+            <input type="number" id="Sequela" placeholder="0" class="saveText" value = "0" min="0">
+        </div><hr>
+        <div id = "xtra">
+            <h2>Apegos:</h2> 
+            <label for="Icon" >Itens Icônicos</label>
+            <!-- <input type="text" id="Icon" class="saveText" placeholder="vazio"> -->
+            <textarea name="a" id="Icon" class="saveText" placeholder="vazio"></textarea>
+
+            <label for="Afet" >Relações Afetivas</label>
+            <!-- <input type="text" id="Afet" class="saveText" placeholder="vazio"> -->
+            <textarea name="b" id="Afet" class="saveText" placeholder="vazio"></textarea>
+
+            <label for="des" >Desejo Obscuro</label>
+            <!-- <input type="text" id="des" class="saveText" placeholder="vazio"> -->
+            <textarea name="c" id="des" class="saveText" placeholder="vazio"></textarea>
+        </div>
+    </div>
+    <h2>Habilidades:</h2>
+    <div class="container">
+        <p>Arquétipo</p>
+
+<!-- PORQUE CARALHOS EU NUM COLOQUEI OS TITULOS VIA JS????? -->
+
+        <p title="Capitão do time de futebol, ginasta
+competitivo, bailarino… independente
+do esporte que pratica, o Atleta é
+acostumado a explorar os limites do
+seu corpo, o que é muito útil para
+quando você está no meio de um massacre. 
+">Atleta</p>
+        <p title="Ele acha que você está vendo filmes de terror de
+mais. O Cético duvida do perigo até o último
+segundo, o que pode dificultar bastante as suas
+chances de sair vivo, mas com certeza facilita
+ver o lado mais lógico das coisas.">Cética</p>
+        <p title="Essa pessoa é extremamente atraente aos olhos
+de todos, e sua beleza trouxe alguns benefícios ao navegar no mar de relações sociais.
+Um colírio para os olhos da audiência aterrorizada.">Esbelto</p>
+        <p title="Corajoso e conveniente, o Herói é aquele personagem que está lá para salvar a todos. Ele
+enfrenta o perigo sem medo, com um empurrãozinho de sorte inexplicável.">Herói</p>
+        <p title="O Nerd não tem tempo para andar com a galera po-
+pular, está ocupado demais com a cabeça enfiada
+nos livros. Seu futuro é brilhante, mas só se
+ele sobreviver, né?">Nerd</p>
+        <p title="O Inocente não fez nada de errado. Ele é uma pessoa
+boa e confiável, e você não quer que ele se dê mal
+no meio desse caos.">Inocente</p>
+        <p title="Uma pessoa… tranquila, assim por dizer. O Relaxado
+está com a cabeça em outro lugar na maior parte do
+dia, mas talvez seja melhor estar sóbrio na hora
+de enfrentar um maluco.">Relaxado</p>
+        <p title="Ele parece um babaca, exceto quando tem um assassino
+à solta ofuscando sua presença. O Valentão pode
+não ser amigo de todos, mas você com certeza o
+quer do seu lado agora.">Valentona</p>
+        <p>1</p>
+        
+        <input type="checkbox" class="habilidade" id="00" title=
+        "HOME RUN!
+Uma vez durante um encontro, você 
+pode comprar uma vantagem com seus pontos de 
+Tensão.">
+        <input type="checkbox" class="habilidade" id="10" title="IMPOSSÍVEL!
+A sobrevivente pode re-rolar todo teste de susto uma vez.">
+        <input type="checkbox" class="habilidade" id="20" title="NÃO PERCO A POSE!
+Você é linde demais para
+morrer. Uma vez por encontro, você pode re-rolar seus dados quando vazar dali">
+        <input type="checkbox" class="habilidade" id="30" title="ATÉ O FIM!
+Ao Arriscar Tudo para si mesmo,
+você mantém um único dado em sua mão ao
+invés de sacrificar todos.">
+        <input type="checkbox" class="habilidade" id="40" title="DEIXA COMIGO!
+Uma vez por Encontro, pode ajudar
+alguém do seu grupo, reduzindo em 1 o valor para a
+compra de alguma vantagem.">
+        <input type="checkbox" class="habilidade" id="50" title="ME AJUDEM!
+Uma vez por sessão, quando uma sobrevivente usar sua ação ajudar alguém em você,
+essa pessoa não perde os dados que deveriam ser
+doados à sua sobrevivente.">
+        <input type="checkbox" class="habilidade" id="60" title="UH? QUÊ?
+Sua mente nem sempre está no lugar correto. Uma
+vez por encontro, o personagem pode ignorar um Teste de
+Susto.">
+        <input type="checkbox" class="habilidade" id="70" title="DAQUI NINGUÉM ME TIRA!
+Uma vez por sessão, o personagem pode se recusar a sacrificar ou descartar
+dados em uma rolagem.">
+        <p>2</p>
+
+        <input type="checkbox" class="habilidade" id="01" title=
+        "EU AGUENTO!
+Uma vez por encontro, o personagem 
+pode substituir o valor de alguma de suas rolagens 
+pelo valor do Dado Marcador.">
+        <input type="checkbox" class="habilidade" id="11" title="DEVE TER UMA EXPLICAÇÃO!
+Fora de um Encontro, o
+Cético pode requisitar saber a quantidade de dados do assassino. Uma vez por sessão.">
+        <input type="checkbox" class="habilidade" id="21" title="EU SOU O MELHOR!
+Ganhe 1 ponto de tensão ao
+obter resultados 6 nos seus dados.">
+        <input type="checkbox" class="habilidade" id="31" title="VAI NA FÉ!
+Uma vez por sessão ao Ajudar Alguém, os dados que você doar serão
+automaticamente transformados em Dados de Fuga para o
+próximo se você quiser.">
+        <input type="checkbox" class="habilidade" id="41" title="EU TENHO UMA TEORIA!
+Uma vez por sessão antes de
+começar uma rodada de encontro, no começo dele
+ou após o turno do Assassino, você pode forçar a
+Diretora a anunciar a próxima ação do Assassino.
+Se o Assassino não consegue mais fazer essa ação
+ele perde o turno.">
+        <input type="checkbox" class="habilidade" id="51" title="EU NÃO QUERO MORRER!
+Durante um encontro, caso
+seja o último no ambiente contra o assassino, você
+pode arriscar tudo e manter seus dados. Caso alguém já tenha arriscado tudo antes de você, você
+ainda pode fazê-lo, porém perde seus dados.">
+        <input type="checkbox" class="habilidade" id="61" title="OLÉ!
+A malemolência de seu corpo facilita na hora de
+evitar algum perigo. Uma vez por encontro, quando
+receber um ferimento, o personagem pode solicitar
+que o dado marcador seja rolado novamente,
+mantendo o novo resultado.">
+        <input type="checkbox" class="habilidade" id="71" title="EU NÃO TENHO MEDO DE VOCÊ!
+Uma vez por encontro, o
+personagem pode descartar um dado de fuga para remover um dado das mãos do assassino.">
+        <p>3</p>
+
+        <input type="checkbox" class="habilidade" id="02" title="NÃO FOI NADA!
+Uma vez por Cena, o Atleta pode 
+ignorar os efeitos de uma qualidade desfavorável 
+do ambiente.">
+        <input type="checkbox" class="habilidade" id="12" title="TALVEZ EU ESTIVESSE ERRADO…
+Quando tirar 6
+em um teste de susto você pode no começo
+de um encontro transformar automaticamente um de seus dados em um dado de fuga. Essa
+habilidade não se acumula">
+        <input type="checkbox" class="habilidade" id="22" title="TIRA ELE DE MIM!
+Uma vez por encontro ao rece-
+ber dados com a ação Ajudar Alguém você rece-
+be um dado a mais da pilha de descarte.">
+        <input type="checkbox" class="habilidade" id="32" title="TUDO POR VOCÊ!
+Ao Arriscar Tudo para salvar outro
+Sobrevivente na cena, você descarta apenas metade
+de seus dados.">
+        <input type="checkbox" class="habilidade" id="42" title="PREVEJO TRAMOIAS!
+Uma vez por Cena de Suspense
+você pode questionar sobre um caminho ao usar a
+ação de Observar, descobrindo o resultado dele sem
+ativar armadilhas.">
+        <input type="checkbox" class="habilidade" id="52" title="NÃO MEREÇO ISSO!
+Uma vez por sessão, pode ignorar os efeitos de alguma habilidade especial
+de assassino que o afete.">
+        <input type="checkbox" class="habilidade" id="62" title="POSSO ATÉ TENTAR!
+Uma vez por encontro, o personagem pode
+comprar uma vantagem pertencente a uma especialidade que
+não possui, porém deve obter sucesso em um teste dessa especialidade. Caso não obtenha sucesso, os pontos de tensão que
+seriam gastos na compra ainda serão debitados.">
+        <input type="checkbox" class="habilidade" id="72" title="ME PASSA O QUE É SEU!
+Uma vez por encontro, você
+pode usar a sua ação para roubar um dado de fuga de
+outro personagem.">
+        <p>4</p>
+        
+        <input type="checkbox" class="habilidade" id="03" title="VOCÊ CONSEGUE!
+Ao escapar de uma cena de en
+contro, escolha um outro sobrevivente para rece
+ber um dado de fuga automaticamente.">
+        <input type="checkbox" class="habilidade" id="13" title="SÓ PODE SER ISSO!
+Uma vez por encontro, após ser afetado por pelo menos um caminho armadilha em uma
+cena de suspense, você pode requisitar saber a quantidade de caminhos armadilhas restantes no ambiente.">
+        <input type="checkbox" class="habilidade" id="23" title="OLHOS EM MIM!
+Uma vez por sessão, a qualquer momento, você pode forçar o Assassino a focar suas ações
+em você em seu próximo turno, se ele usar a ação de
+Ferir ganhe Pontos de Tensão igual ao resultado.">
+        <input type="checkbox" class="habilidade" id="33" title="SEGUE O PAI!
+Se os Aliados de um Herói estiverem
+no mesmo caminho que ele em uma cena de Suspense seus riscos tem -1 de dificuldade.">
+        <input type="checkbox" class="habilidade" id="43" title="EU SEI UM ATALHO!
+Uma vez por sessão você pode descobrir a quantidade de dados de fuga que são necessários
+para escapar.">
+        <input type="checkbox" class="habilidade" id="53" title="SE FOSSE UMA COBRA!
+Ao seguir um caminho armadilha
+você é sempre o primeiro a afetar ela e sofrer as consequências, mas a primeira armadilha na cena de suspense
+que você ativar não tem efeito e é descartada.">
+        <input type="checkbox" class="habilidade" id="63" title="UNI-DUNI-TÊ!
+Durante o primeiro turno de uma cena de suspense
+você escolhe dois caminhos e deve ser afetado por ambos. Se neste turno você não foi afetado por armadilha, você pode usar essa
+habilidade novamente">
+        <input type="checkbox" class="habilidade" id="73" title="O QUE NÃO ME MATA ME FORTALECE!
+Ao ser afetado por um
+caminho armadilha, receba 2 Pontos de Tensão.">
+        <p>5</p>
+
+        <input type="checkbox" class="habilidade" id="04" title="SEMPRE ME SUPERANDO
+Uma vez por encontro, você 
+pode se recusar a aumentar seu nível de sequela ao 
+receber um ferimento.">
+        <input type="checkbox" class="habilidade" id="14" title="NÃO É TÃO RUIM!
+As 3 primeiras falhas em um Ritual se
+tornam qualidades neutras e o dado ainda é descartado.">
+        <input type="checkbox" class="habilidade" id="24" title="NASCI VIRADA PARA A LUA!
+Você tem um dado extra
+para utilizar no Rito de Iniciação, sem precisar sacrificar um seu.">
+        <input type="checkbox" class="habilidade" id="34" title="EU TE PROTEJO!
+Durante um encontro o Herói pode
+cancelar os efeitos de uma qualidade desfavorável
+de um aliado, mas enquanto faz isso seus testes
+são considerados complexos.">
+        <input type="checkbox" class="habilidade" id="44" title="VOCÊ NÃO VAI QUERER SABER!
+Uma vez por sessão, você pode
+utilizar de estudos ocultos para realizar uma Oferenda durante a jogatina.">
+        <input type="checkbox" class="habilidade" id="54" title="FOI SORTE DE PRINCIPIANTE!
+Durante um Ritual, as oferendas falhas podem ser re-roladas por você até duas vezes.">
+        <input type="checkbox" class="habilidade" id="64" title="MINHA NOSSA!
+Uma vez por sessão você pode forçar um teste
+de susto em você mesmo e ativar uma qualidade favorável
+no cenário">
+        <input type="checkbox" class="habilidade" id="74" title="NEM FODENDO
+Impedir uma qualidade negativa de ser
+ativada em um cenário uma vez por sessão antes dela ter
+efeito pelo resto da cena.">
+        <p title="Cicatriz de Sobrevivente">⭐</p>
+
+        <input type="checkbox" class="habilidade" id="05" title="⭐HORA DE REVANCHE!
+Uma vez por encon
+tro você pode gastar um dado para usar 
+duas ações nesse turno.">
+        <input type="checkbox" class="habilidade" id="15" title="⭐FAZ DIREITO!
+Uma vez por encontro, você pode
+ceder sua ação para um aliado, fazendo ele poder
+agir de novo e ambos ganham um dado extra para sua pilha.">
+        <input type="checkbox" class="habilidade" id="25" title="⭐SEI QUE SOU DEMAIS!
+Uma vez por encontro gaste 4 Pontos de Tensão para adicionar +2 Pontos de
+Tensão para todos os outros jogadores da mesa. Sobreviventes só podem ser afetadas por essa habilidade uma vez por encontro.">
+        <input type="checkbox" class="habilidade" id="35" title="⭐JÁ SE ESQUECEU DE MIM?
+O Herói pode continuar na lista de iniciativa após escapar de um encontro, mantendo seus dados de fuga até o final
+da cena. Ele pode gastar seu turno entregando
+um de seus dados de fuga para outra sobrevivente, sem realizar outras ações ou ser afetado pelas ações dos outros.">
+        <input type="checkbox" class="habilidade" id="45" title="⭐EU SEI O SEU PODER DE LUTA!
+Durante um encontro o
+Nerd pode gastar um turno para descobrir quantos dados o assassino tem. Isso pode ser usado
+uma vez por sessão.">
+        <input type="checkbox" class="habilidade" id="55" title="⭐PUREZA DE ESPÍRITO
+Uma vez por sessão pode se livrar de um dado marcador e ganhar o valor dele em
+dados.">
+        <input type="checkbox" class="habilidade" id="65" title="⭐JÁ ESTOU ACOSTUMADO!
+O custo da vantagem Choque de
+Realidade é reduzido a 5 Pontos de Tensão permanentemente.">
+        <input type="checkbox" class="habilidade" id="75" title="⭐VOCÊ VAI SENTIR ESSA AMANHÃ!
+Ao utilizar a ação
+Partir para Cima, você pode se arriscar de maneira complexa, acumulando dois sucessos e assim
+removendo mais de um dado das mãos do Assassino.">
+    </div>
+    <button onclick="save()">Save</button>
+    <button onclick="load()">load</button><br>
+    <!-- <input type="text" id = "loadText"> -->
+    <textarea name="z" id="loadText"></textarea>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
