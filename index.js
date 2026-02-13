@@ -71,13 +71,16 @@ function save(){
     newFicha.className = 'Ficha';
     newFicha.onclick = function(){load(false,cacheFichas[newFicha.textContent])}
     newFicha.textContent = `${document.getElementsByClassName("Ficha").length}`;
-
     newFicha.textContent = `${document.getElementsByClassName("Ficha").length}`;
     fichaButton.appendChild(newFicha)
     return}
     cacheFichas[Number(b)] = `${a} #`;
-
-
+    localStorage['save']=""
+    for (let j = 0; j<(cacheFichas.length);j++ ){
+            for (let i = 0; i<(cacheFichas[j].length);i++ ){
+                localStorage['save']+=cacheFichas[j][i]
+        }
+}
 }
 
 async function load(skip=false,load=loadText.value){
