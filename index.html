@@ -8,14 +8,16 @@
 </head>
 <body>
     <div id = "Main">
-    <div id = "Info"><h1>INFORMAÇÕES:</h1>
+        <h1>Ficha Brutal</h1>
+    <div id = "Info">
+        <p class="titulo1">INFORMAÇÕES:</p>
         <label for="Name">Nome:</label>
         <input type="text" placeholder="nome" id = "Name" class="saveText"><br>
         <label for="detalhes">Detalhes:</label>
         <textarea name="" id="detalhes" class="saveText" placeholder="vazio"></textarea>
         
 
-        <br><br>
+        <br>
         <label for="Arquetype">Arquétipo</label>
         <div class = "Dropdown" id = "Arquetype">
             <button id = "ArqButton" class = "arquetipo a">None</button>
@@ -38,7 +40,7 @@
             </div>
         </div>
     </div><br>
-    <div id = "Atributos"><h2>Atributos</h2>
+    <div id = "Atributos"><p class="titulo2">Atributos</p>
         <div id = "Bonus">
 	    <div>
             <label for="Agi">Agilidade:</label>
@@ -63,39 +65,40 @@
         </div><hr>
         <div id = Die>
             <label for="Dice">Dados</label>
-            <input type="number" id="Dice" placeholder="6" class="saveText" value = "6" min="0">
+            <input type="number" id="Dice" placeholder="6" class="saveText" value = "6" min="0"><br>
 
             <label for="Flee" >Fuga</label>
-            <input type="number" id="Flee" placeholder="0" class="saveText" value = "0" min="0">
+            <input type="number" id="Flee" placeholder="0" class="saveText" value = "0" min="0"><br>
 
             <label for="Ten" >Tensão</label>
-            <input type="number" id="Ten" placeholder="0" class="saveText" value = "0" min="0">
+            <input type="number" id="Ten" placeholder="0" class="saveText" value = "0" min="0"><br>
         </div><hr>
         <div id = "Markers">
             <label for="Feridas" >Feridas</label>
-            <input type="number" id="Feridas" placeholder="0" class="saveText" value = "0" min="0">
+            <input type="number" id="Feridas" placeholder="0" class="saveText" value = "0" min="0"><br>
 
             <label for="Sequela" >Sequela</label>
             <input type="number" id="Sequela" placeholder="0" class="saveText" value = "0" min="0">
         </div><hr>
         <div id = "xtra">
-            <h2>Apegos:</h2> 
-            <label for="Icon" >Itens Icônicos</label>
+            <p class="titulo2">Apegos:</p> 
+            <label for="Icon" >Itens Icônicos</label><br>
             <!-- <input type="text" id="Icon" class="saveText" placeholder="vazio"> -->
             <textarea name="a" id="Icon" class="saveText" placeholder="vazio"></textarea>
+            <br>
+            <label for="Afet" >Relações Afetivas</label><br>
 
-            <label for="Afet" >Relações Afetivas</label>
             <!-- <input type="text" id="Afet" class="saveText" placeholder="vazio"> -->
             <textarea name="b" id="Afet" class="saveText" placeholder="vazio"></textarea>
-
-            <label for="des" >Desejo Obscuro</label>
+                <br>
+            <label for="des" >Desejo Obscuro</label><br>
             <!-- <input type="text" id="des" class="saveText" placeholder="vazio"> -->
             <textarea name="c" id="des" class="saveText" placeholder="vazio"></textarea>
         </div>
     </div>
-    <h2>Habilidades:</h2>
+    <p class="titulo2">Habilidades:</p>
     <div class="container">
-        <p>Arquétipo</p>
+        <p>Arqué</p>
 
 <!-- PORQUE CARALHOS EU NUM COLOQUEI OS TITULOS VIA JS????? -->
 
@@ -122,15 +125,15 @@ nos livros. Seu futuro é brilhante, mas só se
 ele sobreviver, né?">Nerd</p>
         <p title="O Inocente não fez nada de errado. Ele é uma pessoa
 boa e confiável, e você não quer que ele se dê mal
-no meio desse caos.">Inocente</p>
+no meio desse caos.">Inocen</p>
         <p title="Uma pessoa… tranquila, assim por dizer. O Relaxado
 está com a cabeça em outro lugar na maior parte do
 dia, mas talvez seja melhor estar sóbrio na hora
-de enfrentar um maluco.">Relaxado</p>
+de enfrentar um maluco.">Relaxa</p>
         <p title="Ele parece um babaca, exceto quando tem um assassino
 à solta ofuscando sua presença. O Valentão pode
 não ser amigo de todos, mas você com certeza o
-quer do seu lado agora.">Valentona</p>
+quer do seu lado agora.">Valent</p>
         <p>1</p>
         
         <input type="checkbox" class="habilidade" id="00" title=
@@ -331,7 +334,8 @@ removendo mais de um dado das mãos do Assassino.">
     <button onclick="save()">Save</button>
     <button onclick="load()">load</button><br>
     <!-- <input type="text" id = "loadText"> -->
-    <textarea name="z" id="loadText"></textarea>
+    <textarea name="z" id="loadText"></textarea><br>
+    <button onclick="clearCache()">Reset Cache</button>
 
 
 
